@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="qr-code-3-3x3_shrink" size="0.076200 0.076200" />
+    <ImageTarget name="qr-code-1-3x3_shrink" size="0.076200 0.076200" />
+    <ImageTarget name="qr-code-4-3x3_shrink" size="0.076200 0.076200" />
+    <ImageTarget name="qr-code-2-3x3_shrink" size="0.076200 0.076200" />
+  </Tracking>
+</QCARConfig>

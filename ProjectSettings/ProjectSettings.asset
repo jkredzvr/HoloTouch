@@ -12,7 +12,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Vuforia HoloLens Sample
+  productName: HoloTouch
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -554,7 +554,8 @@ PlayerSettings:
   scriptingDefineSymbols:
     7: VUFORIA_SAMPLE_ORIENTATION_SETTINGS
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Metro: 2
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 0
@@ -563,11 +564,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: VuforiaHoloLensSample
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 80168f262fefd401
   metroApplicationDescription: Vuforia HoloLens Sample
   wsaImages: {}
   metroTileShortName: 
@@ -668,7 +669,7 @@ PlayerSettings:
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 
+  cloudProjectId: 9f5b9889-65b0-47f0-a197-df3a8924f004
   projectName: Vuforia HoloLens Sample
   organizationId: kimoria
   cloudEnabled: 0

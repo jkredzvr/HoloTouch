@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/HoloTouch/Scenes/6x6Marker_test.unity
+    guid: 9cd5c85f818b88a42b9f76eb641b6c11
