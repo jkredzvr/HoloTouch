@@ -21,58 +21,47 @@
 * Augmented visual on top of 3D printed model using the Hololens.  Tracking of the model handled by Vuforia, which tracks 4 image trackers located on the corner of the 3D model.  
 
 ## System Requirements
-The [HoloLens website](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools) has a checklist of recommended programs to be installed for HoloLens Development.  We will use Unity 2017.2.1p2 as it is recommended version for developing with Vuforia at the moment.
-
-*  [Unity 2017.2.1p2](https://unity3d.com/unity/qa/patch-releases/2017.2.1p2)
-* Vuforia 6.5.25
+The [HoloLens website](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools) includes a checklist of recommended installed for HoloLens Development.  This project uses Unity 2017.2.1p2 as it is recommended version for developing with Vuforia at the moment.  This project repository will include Vuforia, so downloading it will be unnecessary.
+* [Unity 2017.2.1p2](https://unity3d.com/unity/qa/patch-releases/2017.2.1p2)
+* Vuforia 6.5.25 
 * Visual Studio 2017
 * Windows 10 Fall Creators Update
 
 ## Account Registration
-Create accounts for Unity and Vuforia.  Unity Personal Version is a free beginner friendly development platform for 2D, 3D, VR and AR applications.
+Create free accounts with Unity and Vuforia.  Unity Personal Version is a free beginner friendly development platform for 2D, 3D, VR and AR applications.
 * [Unity ID Registration](https://id.unity.com/)
 * [Vuforia Account Registration](https://developer.vuforia.com/user/register)
 
-## Installation
-
-Hololens Setup
-- download visual studio set up
 
 ## Vuforia Setup
 
 ### Vuforia License Key
-The first step is to log into the [Vuforia License Manager](https://developer.vuforia.com/license-manager) page  with the [Vuforia Account](https://developer.vuforia.com/user/register) you created.  Click on Add License Key to create a free key enabling your Unity application to use Vuforia's image recognition services up to a specified limit.
+The first step is to log into the [Vuforia License Manager](https://developer.vuforia.com/license-manager) page  with the [Vuforia Account](https://developer.vuforia.com/user/register) you created.  
+1. Click on Add License Key to create a free key enabling your Unity application to use Vuforia's image recognition services up to a specified limit.
+![Vuforia License Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/vuforia_licensekey.png)
 
-![Vuforia License Key](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/4_licensekey.png) 
+2. Select Project Type: Development, create a name for your application, and click next to continue.
+![Vuforia License Key 2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/vuforia_licensekey_1.png)
 
-Select Project Type: Development, create a name for your application, and click next to continue.
-
-![Vuforia License Key 2](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/4_licensekey_2.png)
-
-The next page will show the Vuforia license key for your application, which will be later copied and pasted into Vuforia Configuration App License key text field in the Unity application. 
-
-![Vuforia License Key 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/4_licensekey_3.png)
+3. Clicking on your Application Name in the License Manager will show the Vuforia license key, which will be later copied and pasted into Unity Editor. 
+![Vuforia License Key 3](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/vuforia_licensekey3.png)
 
 ### Vuforia Target Image Database
-Go back to Vuforia License Manager page, click on Target Manager link, and click on Add Database button to set up a set of images your HoloLens application will recognize.  Provide a name for the database of images that will be recognized by the app and make sure Type:Devices is selected.
+1. Go back to Vuforia License Manager page, click on Target Manager link
+![Vuforia Target Images](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager.png)
 
-![Vuforia Target Images](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager.png)
-![Vuforia Target Images 2](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_2.png)
-![Vuforia Target Images 3](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_3.png)
+2. Click on Add Database button to set up a set of images your HoloLens application will recognize.  Provide a name for the database of images that will be recognized by the app and make sure Type:Devices is selected.
+![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_1.png)
 
-When the database is created, click on the database link and click on Add Target Button to start adding the images to be recognized.  
-
-![Vuforia Target Images 4](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_4.png)
+3. When the database is created, click on the database link and click on Add Target Button to start adding the images to be recognized.  
+![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_2.png)
 
 Vuforia can recognize different types of targets ranging from 2D images, 3D objects, and shapes.  Further information and suggestions for improving image recognition and tracking stability can be found [here](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability).
 
+Included in this [repository are 4 sample fiduciary markers](https://github.com/jkredzvr/HoloTouch/tree/master/ImageTargets) that can be uploaded for image tracking.  Each marker is a 3 inches by 3 inches (.0762 meters).  For the width input, enter the actual width (in meters) of the image target.  Lastly give the image target a unique name that will be saved in the database, before clicking on the Add Button
+![Vuforia Target Images 3](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_3.png)
 
-For the width input, enter the actual width (in meters) of the image that will be recognized.  
-Lastly give the image target a unique name that will be saved in the database, before clicking on the Add Button
-
-![Vuforia Target Images 5](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_5.png)
-
-Back on the Target Manager page, the uploaded target will appear with a star rating indicating whether the target image will be reliably recognized and tracked by the Vuforia software. Upload 4 image targets with at least 4-5 star ratings which will be used for tracking the 3D Model.  
+Back on the Target Manager page, the uploaded target will appear with a star rating indicating whether the target image will be reliably recognized and tracked by the Vuforia software. Continue uploading a total of 4 image targets with at least 4-5 star ratings which will be used for tracking the 3D Model.  
 
 ![Vuforia Target Images 6](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_6.png)
 
