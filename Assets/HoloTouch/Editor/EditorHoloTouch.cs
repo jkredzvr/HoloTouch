@@ -35,21 +35,26 @@ public class EditorHoloTouch : EditorWindow {
 
     //Editor Rendering
     void OnGUI() {
-        printModel = (GameObject)EditorGUI.ObjectField(new Rect(3, 3, position.width - 6, 20), "3D Model", printModel, typeof(GameObject));
+        EditorGUILayout.LabelField(new GUIContent("3D Model Info", "Enter 3D Model dimensions for arranging model GameObject"), EditorStyles.boldLabel);
+        printModel = (GameObject)EditorGUILayout.ObjectField(new GUIContent("3D Model", "Drag in the 3D model to be projected by the HoloLens.  Keep in mind that the Unity coordinate system uses Y axis in the Z direction."), printModel, typeof(GameObject), true);
+        EditorGUILayout.Space();
 
-        imgTarget1 = (GameObject)EditorGUI.ObjectField(new Rect(3, 23, position.width - 6, 20), "Image Target 1", imgTarget1, typeof(GameObject));
-        imgTarget2 = (GameObject)EditorGUI.ObjectField(new Rect(3, 43, position.width - 6, 20), "Image Target 2", imgTarget2, typeof(GameObject));
-        imgTarget3 = (GameObject)EditorGUI.ObjectField(new Rect(3, 63, position.width - 6, 20), "Image Target 3", imgTarget3, typeof(GameObject));
-        imgTarget4 = (GameObject)EditorGUI.ObjectField(new Rect(3, 83, position.width - 6, 20), "Image Target 4", imgTarget4, typeof(GameObject));
+        modelXDimension = EditorGUILayout.FloatField(new GUIContent("Model x dimensions (m)", "Enter the 3D model's width in meters"), modelXDimension);
+        modelYDimension = EditorGUILayout.FloatField(new GUIContent("Model y dimensions (m)", "Enter the 3D model's length in meters"), modelYDimension);
+        EditorGUILayout.Space();
 
+        EditorGUILayout.LabelField(new GUIContent("Image Target Info", "Enter image target dimensions for arranging image target GameObjects"), EditorStyles.boldLabel);
+        imgTarget1 = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Image Target 1", "Drag Image Target 1's GameObject"), imgTarget1, typeof(GameObject), true);
+        imgTarget2 = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Image Target 2", "Drag Image Target 2's GameObject"), imgTarget2, typeof(GameObject), true);
+        imgTarget3 = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Image Target 3", "Drag Image Target 3's GameObject"), imgTarget3, typeof(GameObject), true);
+        imgTarget4 = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Image Target 4", "Drag Image Target 4's GameObject"), imgTarget4, typeof(GameObject), true);
+        EditorGUILayout.Space();
 
-        modelXDimension = EditorGUI.FloatField(new Rect(3, 103, position.width - 100, 20), "model x dimensions (m)", modelXDimension);
-        modelYDimension = EditorGUI.FloatField(new Rect(3, 123, position.width - 100, 20), "model y dimensions (m)", modelYDimension);
+        imgTargetXDimension = EditorGUILayout.FloatField(new GUIContent("Image target x dimensions(m)", "Enter the image targets width in meters"), imgTargetXDimension);
+        imgTargetYDimension = EditorGUILayout.FloatField(new GUIContent("Image target y dimensions(m)", "Enter the image targets length in meters"), imgTargetYDimension);
+        EditorGUILayout.Space();
 
-        imgTargetXDimension = EditorGUI.FloatField(new Rect(3, 143, position.width - 100, 20), "image target x dimensions (m)", imgTargetXDimension);
-        imgTargetYDimension = EditorGUI.FloatField(new Rect(3, 163, position.width - 100, 20), "image target y dimensions (m)", imgTargetYDimension);
-   
-        if (GUI.Button(new Rect(3, 200, position.width - 6, 20), "Apply Settings")) {
+        if (GUILayout.Button(new GUIContent("Apply Settings","Press to automatically set up the positioning of the image targets and 3D models."))) {
             ApplySettings();
         }
     }
@@ -68,10 +73,15 @@ public class EditorHoloTouch : EditorWindow {
     /// Position each image target to be at the corners of the 3D model
     /// </summary>
     public void PositionImageTargets() {
+        Undo.RecordObjects(new GameObject[] { imgTarget1, imgTarget2, imgTarget3, imgTarget4 },"Postioning Image Targets");
         imgTarget1.transform.localPosition = new Vector3(-xoffset, 0, yoffset);
         imgTarget2.transform.localPosition = new Vector3(xoffset, 0, yoffset);
         imgTarget3.transform.localPosition = new Vector3(-xoffset, 0, -yoffset);
         imgTarget4.transform.localPosition = new Vector3(xoffset, 0, -yoffset);
+        EditorUtility.SetDirty(imgTarget1);
+        EditorUtility.SetDirty(imgTarget2);
+        EditorUtility.SetDirty(imgTarget3);
+        EditorUtility.SetDirty(imgTarget4);
     }
 
     /// <summary>
