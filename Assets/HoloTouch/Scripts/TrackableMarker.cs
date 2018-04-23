@@ -19,25 +19,29 @@ public class TrackableMarker : MonoBehaviour, ITrackableEventHandler {
     public GameObject debugGameObject;
     public GameObject renderGameObject;
     public TargetTrackingManager trackManager;
-    public Color LostMat;
+    public Color ActiveMat;
     public Color FoundMat;
     public Color ExtendedMat;
+    public bool isDebugging;
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region UNITY_MONOBEHAVIOUR_METHODS
+
+    private void Awake() {
+        if (trackManager != null) {
+            trackManager.AddTracker(this);
+        } else {
+            Debug.Log("TrackManager not set");
+        }
+    }
 
     protected virtual void Start() {
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
             mTrackableBehaviour.RegisterTrackableEventHandler(this);
         
-        if (trackManager != null) {
-            trackManager.AddTracker(this);
-        }
-        else {
-            Debug.Log("TrackManager not set");
-        }
+       
     }
 
     #endregion // UNITY_MONOBEHAVIOUR_METHODS
@@ -70,6 +74,12 @@ public class TrackableMarker : MonoBehaviour, ITrackableEventHandler {
         }
     }
 
+    public void DebugMode(bool state) {
+        if(!state)
+            ShowDebugGameObject(false,ExtendedMat);
+        isDebugging = state;
+    }
+
     public TrackableBehaviour.Status GetTrackableState() {
         return mTrackableBehaviour.CurrentStatus;
     }
@@ -80,6 +90,9 @@ public class TrackableMarker : MonoBehaviour, ITrackableEventHandler {
         // Enable rendering:
         foreach (var component in renderer)
             component.enabled = state;
+
+        ShowDebugGameObject(true, ActiveMat);
+
     }
 
     #endregion // PUBLIC_METHODS
@@ -87,29 +100,33 @@ public class TrackableMarker : MonoBehaviour, ITrackableEventHandler {
     #region PRIVATE_METHODS
 
     protected virtual void OnTrackingFound() {
-        ShowDebugGameObject(true);
+        if(isDebugging)
+            ShowDebugGameObject(true, FoundMat );
         SignalTracked(true);   
     }
 
     protected virtual void OnExtendedTracking() {
-        ShowDebugGameObject(true);
+        if (isDebugging)
+            ShowDebugGameObject(true,ExtendedMat);
     }
 
     protected virtual void OnTrackingLost() {
-        ShowDebugGameObject(false);
+        if (isDebugging)
+            ShowDebugGameObject(false,ExtendedMat);
         SignalTracked(false);
     }
 
-    private void ShowDebugGameObject(bool state) {
+    private void ShowDebugGameObject(bool state, Color color) {
         var renderer = debugGameObject.GetComponentsInChildren<Renderer>(true);
 
         // Enable rendering:
-        foreach (var component in renderer)
+        foreach (var component in renderer) {
             component.enabled = state;
+            component.sharedMaterial.color = color;
+        }  
     }
 
     private void SignalTracked(bool state) {
-
         trackManager.UpdateTrackState(this, state);
     }
     #endregion // PRIVATE_METHODS

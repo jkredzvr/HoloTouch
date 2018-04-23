@@ -5,6 +5,13 @@ using Vuforia;
 
 public class TargetTrackingManager : MonoBehaviour {
     public List<TrackableMarker> trackableMarkerList;
+    public bool debugMode;
+
+    private void Start() {
+        foreach(TrackableMarker trackable in trackableMarkerList) {
+            trackable.DebugMode(debugMode);
+        }
+    }
 
     public void AddTracker(TrackableMarker trackable) {
         trackableMarkerList.Add(trackable);
@@ -22,7 +29,7 @@ public class TargetTrackingManager : MonoBehaviour {
         return false;
     }
 
-    private TrackableMarker GetTrackedMarker() {
+    public TrackableMarker GetTrackedMarker() {
         foreach (TrackableMarker trackable in trackableMarkerList) {  
             if ((trackable.GetTrackableState() == TrackableBehaviour.Status.DETECTED ||
             trackable.GetTrackableState() == TrackableBehaviour.Status.TRACKED)) {
@@ -32,8 +39,7 @@ public class TargetTrackingManager : MonoBehaviour {
         return null;
     }
 
-
-    public void UpdateTrackState(TrackableMarker trackable, bool isTracked){
+    public virtual void UpdateTrackState(TrackableMarker trackable, bool isTracked){
         if (!isTracked) {
             trackable.ShowRenderGameObject(false);
             
@@ -45,7 +51,6 @@ public class TargetTrackingManager : MonoBehaviour {
         } else {
             bool anyTrackedMarker = this.isTracked(trackable);
             if (!anyTrackedMarker) {
-                Debug.Log("rendering graph");
                 trackable.ShowRenderGameObject(true);
             }
         }
