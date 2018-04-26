@@ -157,7 +157,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 8198fecea9d8e284c85b8e6252c719d0, type: 2}
+  - {fileID: 2100000, guid: 9f945f4bfe1c28444989f72572cb2622, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -204,13 +204,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64319579}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -0.001, z: 0}
+  m_LocalScale: {x: 0.03048, y: 0.03048, z: 0.03048}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &104395298
 Prefab:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ MonoBehaviour:
   debugGameObject: {fileID: 1770208475}
   renderGameObject: {fileID: 0}
   trackManager: {fileID: 1185699272}
-  LostMat: {r: 0, g: 0, b: 0, a: 0}
+  ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 1, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
   isDebugging: 0
@@ -462,10 +462,10 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: qr-code-3-3x3_shrink
+  mTrackableName: '--- EMPTY ---'
   mPreserveChildSize: 1
   mInitializedInEditor: 1
-  mDataSetPath: Vuforia/DataViz.xml
+  mDataSetPath: '--- EMPTY ---'
   mExtendedTracking: 0
   mInitializeSmartTerrain: 0
   mReconstructionToInitialize: {fileID: 0}
@@ -591,7 +591,7 @@ Transform:
   - {fileID: 2120195083}
   - {fileID: 2003152426}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1395387255
 GameObject:
@@ -698,7 +698,7 @@ MonoBehaviour:
   debugGameObject: {fileID: 104395300}
   renderGameObject: {fileID: 0}
   trackManager: {fileID: 1185699272}
-  LostMat: {r: 0, g: 0, b: 0, a: 0}
+  ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 0, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
   isDebugging: 0
@@ -921,7 +921,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: qr-code-3-3x3_shrinkMaterial
+  m_Name: '--- EMPTY ---Material'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -934,7 +934,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8f64a7ce06d44ad6a291630d406a5e5d, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1273,7 +1273,7 @@ MonoBehaviour:
   debugGameObject: {fileID: 1098116252}
   renderGameObject: {fileID: 0}
   trackManager: {fileID: 1185699272}
-  LostMat: {r: 0, g: 0, b: 0, a: 0}
+  ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 0, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
   isDebugging: 0
@@ -1402,7 +1402,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2120195082
 GameObject:
@@ -1509,7 +1509,7 @@ MonoBehaviour:
   debugGameObject: {fileID: 1812059420}
   renderGameObject: {fileID: 0}
   trackManager: {fileID: 1185699272}
-  LostMat: {r: 0, g: 0, b: 0, a: 0}
+  ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 0, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
   isDebugging: 0
@@ -1542,49 +1542,3 @@ MonoBehaviour:
   mImageTargetType: 0
   mWidth: 1
   mHeight: 1
---- !u!1001 &2139412105
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400016, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.6933
-      objectReference: {fileID: 0}
-    - target: {fileID: 400016, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400016, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0731
-      objectReference: {fileID: 0}
-    - target: {fileID: 400016, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.72537434
-      objectReference: {fileID: 0}
-    - target: {fileID: 400016, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400016, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400016, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6883546
-      objectReference: {fileID: 0}
-    - target: {fileID: 400016, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400016, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -93
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 354843feff5a4bb449995830601f6d09, type: 3}
-  m_IsPrefabParent: 0
