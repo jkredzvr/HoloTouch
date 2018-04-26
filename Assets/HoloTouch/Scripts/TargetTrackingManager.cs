@@ -4,6 +4,7 @@ using UnityEngine;
 using Vuforia;
 
 public class TargetTrackingManager : MonoBehaviour {
+    public TrackedModelScript model;
     public List<TrackableMarker> trackableMarkerList;
     public bool debugMode;
 
@@ -41,17 +42,19 @@ public class TargetTrackingManager : MonoBehaviour {
 
     public virtual void UpdateTrackState(TrackableMarker trackable, bool isTracked){
         if (!isTracked) {
-            trackable.ShowRenderGameObject(false);
-            
             //Show another Tracked Marker
             TrackableMarker anotherTrackedMarker = GetTrackedMarker();
             if (anotherTrackedMarker != null) {
-                anotherTrackedMarker.ShowRenderGameObject(true);
+                model.SetTarget(anotherTrackedMarker.gameObject);
+                model.SetTrackTarget();
+            } else {
+                model.SetTarget(null);
             }
         } else {
-            bool anyTrackedMarker = this.isTracked(trackable);
-            if (!anyTrackedMarker) {
-                trackable.ShowRenderGameObject(true);
+            bool anyOtherTrackedMarkers = this.isTracked(trackable);
+            if (!anyOtherTrackedMarkers) {
+                model.SetTarget(trackable.gameObject);
+                model.SetTrackTarget();
             }
         }
     }

@@ -534,7 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugGameObject: {fileID: 746515280}
   renderGameObject: {fileID: 0}
-  trackManager: {fileID: 1703663382}
+  trackManager: {fileID: 0}
   ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 0, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugGameObject: {fileID: 812991460}
   renderGameObject: {fileID: 0}
-  trackManager: {fileID: 1703663382}
+  trackManager: {fileID: 0}
   ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 1, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
@@ -1347,7 +1347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugGameObject: {fileID: 17053257}
   renderGameObject: {fileID: 0}
-  trackManager: {fileID: 1703663382}
+  trackManager: {fileID: 0}
   ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 0, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
@@ -1742,7 +1742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugGameObject: {fileID: 1418724856}
   renderGameObject: {fileID: 0}
-  trackManager: {fileID: 1703663382}
+  trackManager: {fileID: 0}
   ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 0, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
@@ -1948,18 +1948,17 @@ GameObject:
 --- !u!114 &1703663382
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114832030727123296, guid: b802e721acfedad4e80d7839acddf425,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1703663381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a8b594c1606cfa4397e513c7cb56d95, type: 3}
+  m_Script: {fileID: 11500000, guid: 2468422da75eca745a5550527200d71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackableMarkerList: []
-  debugMode: 1
   model: {fileID: 747870795}
+  trackableMarkerList: []
+  debugMode: 0
 --- !u!4 &1703663383
 Transform:
   m_ObjectHideFlags: 0

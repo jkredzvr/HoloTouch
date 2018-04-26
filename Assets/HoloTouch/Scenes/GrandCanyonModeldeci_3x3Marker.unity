@@ -138,7 +138,7 @@ Transform:
   m_GameObject: {fileID: 35646851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1.4999999}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children:
   - {fileID: 518012800}
   m_Father: {fileID: 161092816}
@@ -357,7 +357,7 @@ Transform:
   m_GameObject: {fileID: 103917544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1.4999999}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children:
   - {fileID: 91435523}
   m_Father: {fileID: 194474339}
@@ -392,8 +392,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 161092815}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0889, y: 0, z: 0.05715}
-  m_LocalScale: {x: 0.0508, y: 0.0508, z: 0.0508}
+  m_LocalPosition: {x: -0.101600006, y: 0, z: 0.06985}
+  m_LocalScale: {x: 0.0762, y: 0.0762, z: 0.0762}
   m_Children:
   - {fileID: 35646852}
   m_Father: {fileID: 876116856}
@@ -468,9 +468,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugGameObject: {fileID: 518012799}
   renderGameObject: {fileID: 0}
-  trackManager: {fileID: 1185699272}
+  trackManager: {fileID: 876116857}
   ActiveMat: {r: 0, g: 0, b: 0, a: 0}
-  FoundMat: {r: 0, g: 0, b: 0, a: 0}
+  FoundMat: {r: 0, g: 1, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
   isDebugging: 0
 --- !u!114 &161092821
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: qr1-2x2
+  mTrackableName: Target1-3x3
   mPreserveChildSize: 1
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/DataViz.xml
@@ -500,8 +500,8 @@ MonoBehaviour:
   mAutoSetOccluderFromTargetSize: 0
   mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 0.0508
-  mHeight: 0.0508
+  mWidth: 0.0762
+  mHeight: 0.0762
 --- !u!1 &165757952
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,8 +621,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 194474338}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0889, y: 0, z: 0.05715}
-  m_LocalScale: {x: 0.0508, y: 0.0508, z: 0.0508}
+  m_LocalPosition: {x: 0.101600006, y: 0, z: 0.06985}
+  m_LocalScale: {x: 0.0762, y: 0.0762, z: 0.0762}
   m_Children:
   - {fileID: 103917545}
   m_Father: {fileID: 876116856}
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugGameObject: {fileID: 91435522}
   renderGameObject: {fileID: 0}
-  trackManager: {fileID: 1185699272}
+  trackManager: {fileID: 876116857}
   ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 0, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
@@ -714,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: qr2-2x2
+  mTrackableName: Target2-3x3
   mPreserveChildSize: 1
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/DataViz.xml
@@ -729,8 +729,8 @@ MonoBehaviour:
   mAutoSetOccluderFromTargetSize: 0
   mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 0.0508
-  mHeight: 0.0508
+  mWidth: 0.0762
+  mHeight: 0.0762
 --- !u!1 &194484477
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +846,7 @@ Transform:
   m_GameObject: {fileID: 203181980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1.4999999}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children:
   - {fileID: 194484478}
   m_Father: {fileID: 2130013035}
@@ -1043,7 +1043,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 876116856}
-  - component: {fileID: 1185699272}
+  - component: {fileID: 876116857}
   m_Layer: 0
   m_Name: Target-Placement-Manager-TrackingMethod2
   m_TagString: Untagged
@@ -1070,6 +1070,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &876116857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 876116855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2468422da75eca745a5550527200d71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 1700492255}
+  trackableMarkerList: []
+  debugMode: 0
 --- !u!1001 &1003916925
 Prefab:
   m_ObjectHideFlags: 0
@@ -1141,27 +1155,12 @@ Transform:
   m_GameObject: {fileID: 1048999345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1.4999999}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children:
   - {fileID: 165757953}
   m_Father: {fileID: 1342745939}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1185699272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114832030727123296, guid: b802e721acfedad4e80d7839acddf425,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 876116855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a8b594c1606cfa4397e513c7cb56d95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trackableMarkerList: []
-  debugMode: 1
-  model: {fileID: 1700492255}
 --- !u!1 &1342745938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,8 +1190,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1342745938}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0889, y: 0, z: -0.05715}
-  m_LocalScale: {x: 0.0508, y: 0.0508, z: 0.0508}
+  m_LocalPosition: {x: -0.101600006, y: 0, z: -0.06985}
+  m_LocalScale: {x: 0.0762, y: 0.0762, z: 0.0762}
   m_Children:
   - {fileID: 1048999346}
   m_Father: {fileID: 876116856}
@@ -1267,7 +1266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugGameObject: {fileID: 165757952}
   renderGameObject: {fileID: 0}
-  trackManager: {fileID: 1185699272}
+  trackManager: {fileID: 876116857}
   ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 0, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
@@ -1284,7 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: qr3-2x2
+  mTrackableName: Target3-3x3
   mPreserveChildSize: 1
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/DataViz.xml
@@ -1299,8 +1298,8 @@ MonoBehaviour:
   mAutoSetOccluderFromTargetSize: 0
   mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 0.0508
-  mHeight: 0.0508
+  mWidth: 0.0762
+  mHeight: 0.0762
 --- !u!43 &1559779072
 Mesh:
   m_ObjectHideFlags: 0
@@ -1435,7 +1434,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: qr3-2x2Material
+  m_Name: Target4-3x3Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -1448,7 +1447,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3c3dcd82aaa44e03b1c42408f3d786a8, type: 3}
+        m_Texture: {fileID: 2800000, guid: c7c554d29bac4203a9ce4403ef660a6f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -1740,8 +1739,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2130013034}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0889, y: 0, z: -0.05715}
-  m_LocalScale: {x: 0.0508, y: 0.0508, z: 0.0508}
+  m_LocalPosition: {x: 0.101600006, y: 0, z: -0.06985}
+  m_LocalScale: {x: 0.0762, y: 0.0762, z: 0.0762}
   m_Children:
   - {fileID: 203181981}
   m_Father: {fileID: 876116856}
@@ -1816,7 +1815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugGameObject: {fileID: 194484477}
   renderGameObject: {fileID: 0}
-  trackManager: {fileID: 1185699272}
+  trackManager: {fileID: 876116857}
   ActiveMat: {r: 0, g: 0, b: 0, a: 0}
   FoundMat: {r: 0, g: 0, b: 0, a: 0}
   ExtendedMat: {r: 0, g: 0, b: 0, a: 0}
@@ -1833,7 +1832,7 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: qr4-2x2
+  mTrackableName: Target4-3x3
   mPreserveChildSize: 1
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/DataViz.xml
@@ -1848,5 +1847,5 @@ MonoBehaviour:
   mAutoSetOccluderFromTargetSize: 0
   mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 0.0508
-  mHeight: 0.0508
+  mWidth: 0.0762
+  mHeight: 0.0762

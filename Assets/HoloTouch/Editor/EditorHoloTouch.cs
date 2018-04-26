@@ -112,5 +112,9 @@ public class EditorHoloTouch : EditorWindow {
         trackedModel.modelYDimension = modelYDimension;
         trackedModel.imgXDimension = imgTargetXDimension;
         trackedModel.imgYDimension = imgTargetYDimension;
+
+        //Set tracked model to TargetTrackerManager
+        TargetTrackingManager trackManager = targetPlacementManger.GetComponent<TargetTrackingManager>();
+        trackManager.model = trackedModel;
     }
 }
