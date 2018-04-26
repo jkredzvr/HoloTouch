@@ -8,7 +8,7 @@ using Vuforia;
 /// Target Tracking Manager that uses only one instance of 3D model
 /// </summary>
 public class TargetTrackingManager_Single : TargetTrackingManager {
-    public TrackedModel model;
+    public TrackedModelScript model;
 
     public override void UpdateTrackState(TrackableMarker trackable, bool isTracked){
         if (!isTracked) {            

@@ -13,6 +13,8 @@ public class EditorHoloTouch : EditorWindow {
     public GameObject imgTarget3 = null;
     public GameObject imgTarget4 = null;
 
+    public GameObject targetPlacementManger = null;
+    
     public float modelXDimension;
     public float modelYDimension;
     
@@ -43,6 +45,10 @@ public class EditorHoloTouch : EditorWindow {
         modelYDimension = EditorGUILayout.FloatField(new GUIContent("Model y dimensions (m)", "Enter the 3D model's length in meters"), modelYDimension);
         EditorGUILayout.Space();
 
+        EditorGUILayout.LabelField(new GUIContent("Target Manager", "Drag Target Manager GameObject"), EditorStyles.boldLabel);
+        targetPlacementManger = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Target Manager", "Drag Target Manager GameObject."), targetPlacementManger, typeof(GameObject), true);
+        EditorGUILayout.Space();
+
         EditorGUILayout.LabelField(new GUIContent("Image Target Info", "Enter image target dimensions for arranging image target GameObjects"), EditorStyles.boldLabel);
         imgTarget1 = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Image Target 1", "Drag Image Target 1's GameObject"), imgTarget1, typeof(GameObject), true);
         imgTarget2 = (GameObject)EditorGUILayout.ObjectField(new GUIContent("Image Target 2", "Drag Image Target 2's GameObject"), imgTarget2, typeof(GameObject), true);
@@ -57,6 +63,7 @@ public class EditorHoloTouch : EditorWindow {
         if (GUILayout.Button(new GUIContent("Apply Settings","Press to automatically set up the positioning of the image targets and 3D models."))) {
             ApplySettings();
         }
+        EditorGUILayout.Space();
     }
 
     /// <summary>
@@ -96,28 +103,14 @@ public class EditorHoloTouch : EditorWindow {
     /// of one of the image targets.  That way when an image target is recognized by Vuforia, it will render its 3D model.
     /// </summary>
     public void PositionModels() {
-        GameObject model1 = CreateModel();
-        model1.transform.SetParent(imgTarget1.transform.parent);
-        model1.transform.localPosition = new Vector3(-(modelXDimension / 2.0f), 0, -(modelYDimension / 2.0f));
-        model1.transform.SetParent(imgTarget1.transform);
-        imgTarget1.GetComponent<TrackableMarker>().renderGameObject = model1; 
+        GameObject model = CreateModel();
+        model.transform.SetParent(targetPlacementManger.transform);
+        model.transform.localPosition = new Vector3(-(modelXDimension / 2.0f), 0, -(modelYDimension / 2.0f));
 
-        GameObject model2 = CreateModel();
-        model2.transform.SetParent(imgTarget2.transform.parent);
-        model2.transform.localPosition = new Vector3(-(modelXDimension / 2.0f), 0, -(modelYDimension / 2.0f));
-        model2.transform.SetParent(imgTarget2.transform);
-        imgTarget2.GetComponent<TrackableMarker>().renderGameObject = model2;
-
-        GameObject model3 = CreateModel();
-        model3.transform.SetParent(imgTarget3.transform.parent);
-        model3.transform.localPosition = new Vector3(-(modelXDimension / 2.0f), 0, -(modelYDimension / 2.0f));
-        model3.transform.SetParent(imgTarget3.transform);
-        imgTarget3.GetComponent<TrackableMarker>().renderGameObject = model3;
-
-        GameObject model4 = CreateModel();
-        model4.transform.SetParent(imgTarget4.transform.parent);
-        model4.transform.localPosition = new Vector3(-(modelXDimension / 2.0f), 0, -(modelYDimension / 2.0f));
-        model4.transform.SetParent(imgTarget4.transform);
-        imgTarget4.GetComponent<TrackableMarker>().renderGameObject = model4;
+        TrackedModelScript trackedModel = model.AddComponent<TrackedModelScript>();
+        trackedModel.modelXDimension = modelXDimension;
+        trackedModel.modelYDimension = modelYDimension;
+        trackedModel.imgXDimension = imgTargetXDimension;
+        trackedModel.imgYDimension = imgTargetYDimension;
     }
 }

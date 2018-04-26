@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TrackedModel : MonoBehaviour {
+public class TrackedModelScript : MonoBehaviour {
 
     private GameObject target;
     private bool isTracking = false;
