@@ -113,16 +113,19 @@ The template scene will start with an AR Camera, Target-Placement-Manager, and B
 ### Setting up Target Images in Unity
 With the Vuforia Configurations loaded with the image database set in your Vuforia account, we'll set up a virtual scene for our objects to appear when an images are recognized.
 
-1. For each imgTarget1,2,3,4 set each associated image target.  ImgTargets will be located sequentially left to right at each corner of the 3D model.  
+1. For each imgTarget1,2,3,4 set each associated image target.  ImgTargets will be located sequentially left to right at each corner of the 3D model.  (By default the image targets will be overlapping since an image has not been specified.  The positioning and ordering of the targets will be apparent when we define the image targets)  
 - imgTarget1 top left corner
 - imgTarget2 top right corner
 - imgTarget3 bottom left corner
 - imgTarget4 bottom right corner
 2. Select an imgTarget in the hierarchy tab
+![Selected Image Target](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/SelectedImgTarget.png)
 3. In the inspector, the Image Target Behaviour component handles the image target settings
 4. In the Database drop down field (currently labelled as ---EMPTY--- select your image database for the project
-5. Next in the Image Target drop down field, select the appropriate image target file name associated to the image you will place in the corners of your actual 3D printed model.
+5. Next in the Image Target drop down field, select the appropriate image target file name associated to the image you will place in the corners of your actual 3D printed model. (In my case my database was named DataVis, and I will use the 2x2" img target)
+![Selected Image Target](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/SettingImgTargets.gif)
 6. After selecting the Image Target, the imgTarget gameobject will be re-scaled in the Scene tab to the actual size in meters of your uploaded image targets.  Continue setting the image targets for the remaining imgTarget gameobjects.
+![All Images Set](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/AllImagesSet.png)
 
 ### Import 3D Model
 Next import your 3D obj model into Unity.
