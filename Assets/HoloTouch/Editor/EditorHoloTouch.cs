@@ -82,7 +82,7 @@ public class EditorHoloTouch : EditorWindow {
     public void PositionImageTargets() {
         Undo.RecordObjects(new GameObject[] { imgTarget1, imgTarget2, imgTarget3, imgTarget4 },"Postioning Image Targets");
         imgTarget1.transform.localPosition = new Vector3(-xoffset, 0, yoffset);
-        imgTarget2.transform.localPosition = new Vector3(xoffset, 0, yoffset);
+        imgTarget2.transform.localPosition = new Vector3(xoffset, 0, yoffset);  
         imgTarget3.transform.localPosition = new Vector3(-xoffset, 0, -yoffset);
         imgTarget4.transform.localPosition = new Vector3(xoffset, 0, -yoffset);
         EditorUtility.SetDirty(imgTarget1);

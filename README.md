@@ -2,7 +2,7 @@
 # HoloTouch
 
    
-**HoloTouch**  Unity package/project for creating custom augmented visualizations over 3D printed models using tracking markers for the Microsoft HoloLens.
+**HoloTouch**  Unity package/project creates custom augmented visualizations over 3D printed models using tracking markers using Vuforia and Microsoft HoloLens.
 
 * [Features](#features)
 * [System Requirements](#system-requirements)
@@ -18,7 +18,7 @@
 
 * Vuforia
 * Hololens
-* Augmented visual on top of 3D printed model using the Hololens.  Tracking of the model handled by Vuforia, which tracks 4 image trackers located on the corner of the 3D model.  
+* Augmented visual on top of 3D printed model using the Hololens.  Tracking of the model handled by Vuforia, which tracks 4 image trackers located on the corners of the 3D model.  
 
 ## System Requirements
 The [HoloLens website](https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools) includes a checklist of recommended installed for HoloLens Development.  This project uses Unity 2017.2.1p2 as it is recommended version for developing with Vuforia at the moment.  This project repository will include Vuforia, so downloading it will be unnecessary.
@@ -38,73 +38,77 @@ Create free accounts with Unity and Vuforia.  Unity Personal Version is a free b
 ### Vuforia License Key
 The first step is to log into the [Vuforia License Manager](https://developer.vuforia.com/license-manager) page  with the [Vuforia Account](https://developer.vuforia.com/user/register) you created.  
 1. Click on Add License Key to create a free key enabling your Unity application to use Vuforia's image recognition services up to a specified limit.
-![Vuforia License Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/vuforia_licensekey.png)
+![Vuforia License Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager.png)
 
 2. Select Project Type: Development, create a name for your application, and click next to continue.
-![Vuforia License Key 2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/vuforia_licensekey_1.png)
+![Vuforia License Key 2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/vuforia_licensekey.png)
 
 3. Clicking on your Application Name in the License Manager will show the Vuforia license key, which will be later copied and pasted into Unity Editor. 
 ![Vuforia License Key 3](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/vuforia_licensekey3.png)
 
 ### Vuforia Target Image Database
 1. Go back to Vuforia License Manager page, click on Target Manager link
-![Vuforia Target Images](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager.png)
-
 2. Click on Add Database button to set up a set of images your HoloLens application will recognize.  Provide a name for the database of images that will be recognized by the app and make sure Type:Devices is selected.
 ![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_1.png)
 
 3. When the database is created, click on the database link and click on Add Target Button to start adding the images to be recognized.  
 ![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_2.png)
 
-Vuforia can recognize different types of targets ranging from 2D images, 3D objects, and shapes.  Further information and suggestions for improving image recognition and tracking stability can be found [here](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability).
-
-Included in this [repository are 4 sample fiduciary markers](https://github.com/jkredzvr/HoloTouch/tree/master/ImageTargets) that can be uploaded for image tracking.  Each marker is a 3 inches by 3 inches (.0762 meters).  For the width input, enter the actual width (in meters) of the image target.  Lastly give the image target a unique name that will be saved in the database, before clicking on the Add Button
+4. Vuforia can recognize different types of targets ranging from 2D images, 3D objects, and shapes.  Further information and suggestions for improving image recognition and tracking stability can be found [here](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability).
+- Included in this [repository is a sample set of 4 fiduciary markers](https://github.com/jkredzvr/HoloTouch/tree/master/ImageTargets)  (each being 2"x2" and 3"x3" in size) that can be uploaded for image tracking.  
+- 
+5. When uploading the image target, the width must be entered meters.  Lastly give the image target a unique name that will be saved in the database, before clicking on the Add Button
 ![Vuforia Target Images 3](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_3.png)
 
-Back on the Target Manager page, the uploaded target will appear with a star rating indicating whether the target image will be reliably recognized and tracked by the Vuforia software. Continue uploading a total of 4 image targets with at least 4-5 star ratings which will be used for tracking the 3D Model.  
-
+6. Back on the Target Manager page, the uploaded image target will appear with a star rating indicating whether the target image will be reliably recognized and tracked by the Vuforia software.  Continue uploading all of the image targets with at least 4-5 star ratings which will be used for tracking the 3D Model.
 ![Vuforia Target Images 6](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_6.png)
 
-After uploading your image targets, click on the Download Database(All) button and select Unity Editor to download the image database files into a Unity package. 
-
+7. After uploading your image targets, click on the Download Database(All) button and select Unity Editor to download the image database files into a Unity package. 
 
 ## 3D Model Preparation
-Find a 3D Model you would like to be augmented using the HoloTouch toolkit, or create your own using websites like https://craftml.io/ or https://www.tinkercad.com.  
+1. Find a 3D Model you would like to print and be augmented using the HoloTouch toolkit, or create your own using websites like https://craftml.io/ or https://www.tinkercad.com.  
 
-- For the time being, it is recommended to use a model that has the length and width dimensions, which determines the positioning of image markers.  *Models with different sizes length and width dimensions can be used, but placement of the image markers in Unity may need to be manually adjusted rather than using the HoloTouch toolkit.*
+- For the time being, it is recommended to use a model that are rectangular or square dimensions (Equal widths and equal length dimensions).  
 
-Unity can import .obj file formats, but if your model is a .stl format, you can convert it using http://www.greentoken.de/onlineconv/ or open it with [Microsoft's 3D Builder](https://www.microsoft.com/en-us/store/p/3d-builder/9wzdncrfj3t6) and save it an .obj file.
-
+2. Unity can import .obj file formats, but if your model is a .stl format, you can convert it using http://www.greentoken.de/onlineconv/ or open it with [Microsoft's 3D Builder](https://www.microsoft.com/en-us/store/p/3d-builder/9wzdncrfj3t6) and save it an .obj file.
+- To improve the performance of the application, it is recommended to minimize and reduce the number of meshes of the model as much as possible.
 - It is also recommended that the 3D Model has a flat base allowing it to be easier affixed to a board or flat surface with the image tracking markers.
+- **NOTE:**  Keep in mind the measurement scale of the selected 3D model and the axis the model is oriented in.  Typical 3D modelling tools align the z-axis to be "UP", however Unity's coordinate system treats y-axis to be UP.  If possible, in a 3D modelling software program
+	- orient the model's o if the imported 3D model is rotated, then coordinates were different.  
+	- position the origin of the coordinate system to be located to the model's lower corner.  
+![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/ModellingCoordinates.png)
 
 ## Configuring Project
 1. Download the HoloTouch Toolkit from this github repo 
 2. Open the HoloTouch project with Unity 2017.2.1p2 editor
 3. In the Project folder tab, navigate to Assets/HoloTouch/Scenes/ folder and select on the Template.scene file.
-4. With the template scene selected, press Ctrl+D to make a copy of the scene and rename to what you desire.  Double click to open the scene that you will build your HoloLens application.
+![Vuforia Template Scene](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/TemplateSceneSelected.png)
+
+5. With the template scene selected, press Ctrl+D to make a copy of the scene and rename to what you desire.
+6. Double click to open the scene that you will build your HoloLens application.
 
 ### Configure Project Settings
-1. Select  **File/ Build Settings /** and underneath Platform select Universal Windows Platform and click on Switch Platform to build for the HoloLens.  [/IMAGE OF SETTINGS]
-2. Next click on Players Settings, next to the Switch Platform button
-3. The right side in the inspector panel of the Players Settings.  Click to drop down the XR Settings tab.  Check box the Virtual Reality Supported and Vuforia Augmented Reality options.
-4. At the top of the Players Settings is a text field for Product Name, which you can change to reflect the name of your application in the HoloLens.  
-5. Click on Add Open Scene, which should include your current scene with a checked box when you are building your application to the HoloLens.
+1. Select  **File/ Build Settings /** and underneath Platform, if Universal Windows Platform is not selected, select it and click on Switch Platform to build for the HoloLens. 
+![Vuforia Build Settings](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/buildsettings2.png)
+2. Click on Add Open Scene, which should include your current scene with a checked box when you are building your application to the HoloLens.
+3. Next click on Players Settings, next to the Switch Platform button
+4. The right side in the inspector panel of the Players Settings.  Click to drop down the XR Settings tab.  Check box the Virtual Reality Supported and Vuforia Augmented Reality options.
+![Vuforia XR Settings](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/XRSettings.png)
+5. At the top of the Players Settings is a text field for Product Name, which you can change to reflect the name of your application in the HoloLens.  
 
 ### Configuring Vuforia Target Database
-The template scene will start with an AR Camera, Target-Placement-Manager, and Background Instruction Plane, shown in the Scene tab and Hierarchy Tab.  The Target-Placement-Manager contains the imgTarget1,2,3,4, which will be tracked by Vuforia.
+The template scene will start with an AR Camera, Target-Placement-Manager, and Background Instruction Plane, shown in the Scene tab and Hierarchy Tab.  The Target-Placement-Manager contains the ImgTarget1,2,3,4, which will be tracked by Vuforia.
 
-1.  First step is to import the Vuforia Image Database file that was downloaded from Vuforia website.  
-2. Navigate to **Assets/Import Packages/Custom Packages** and select the downloaded Image Database Unity Package.
+1.  Import the Vuforia Image Database file that was downloaded from Vuforia website by navigating to **Assets/Import Packages/Custom Packages** and open the downloaded Image Database Unity Package.
 
 ![Vuforia Target Images 7](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/raw/master/Screenshots/5_TargetManager_7.png)](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_7.png)
 
-3. After importing all the database image Unity package, navigate to **Windows/Vuforia Configuration** to show the Vuforia Configuration settings in the inspector window.
-
-4.  In addition to the Databases, you will need to paste your Vuforia App License key in the App License Key text input field.
-5.  Underneath the Digital Eyewear header, select **Optical See-Through** for Eyewear Type and **HoloLens** for See Through Config
-6. Underneath Databases header the name of your image database should show up.  Select the check boxes to load and activate your databases and enable tracking with Vuforia
-![Vuforia Target Images 8](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/raw/master/Screenshots/5_TargetManager_8.png)](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_8.png)
-
+3. After importing all the database image Unity package, navigate to **Windows/Vuforia Configuration** to show the Vuforia Configuration settings in the Inspector window.
+4.  In the Vuforia Configuration, paste your Vuforia App License key from your Vuforia  Account into the App License Key text input field.
+![Vuforia Config App Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/VuforiaConfigAppKey.png)
+6.  Underneath the Digital Eyewear header, select **Optical See-Through** for Eyewear Type and **HoloLens** for See Through Config
+7. Underneath Databases header the name of your image database should show up.  (In my case I named my database DataViz)  Select the check boxes to load and activate your databases and enable tracking with Vuforia
+![Vuforia Config App Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/VuforiaConfDatabases.png)
 
 ### Setting up Target Images in Unity
 With the Vuforia Configurations loaded with the image database set in your Vuforia account, we'll set up a virtual scene for our objects to appear when an images are recognized.
