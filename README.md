@@ -49,14 +49,14 @@ The first step is to log into the [Vuforia License Manager](https://developer.vu
 ### Vuforia Target Image Database
 1. Go back to Vuforia License Manager page, click on Target Manager link
 2. Click on Add Database button to set up a set of images your HoloLens application will recognize.  Provide a name for the database of images that will be recognized by the app and make sure Type:Devices is selected.
-![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_1.png)
+![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_1.PNG)
 
 3. When the database is created, click on the database link and click on Add Target Button to start adding the images to be recognized.  
 ![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_2.png)
 
 4. Vuforia can recognize different types of targets ranging from 2D images, 3D objects, and shapes.  Further information and suggestions for improving image recognition and tracking stability can be found [here](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability).
 - Included in this [repository is a sample set of 4 fiduciary markers](https://github.com/jkredzvr/HoloTouch/tree/master/ImageTargets)  (each being 2"x2" and 3"x3" in size) that can be uploaded for image tracking.  
-- 
+
 5. When uploading the image target, the width must be entered meters.  Lastly give the image target a unique name that will be saved in the database, before clicking on the Add Button
 ![Vuforia Target Images 3](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_3.png)
 
@@ -76,7 +76,7 @@ The first step is to log into the [Vuforia License Manager](https://developer.vu
 - **NOTE:**  Keep in mind the measurement scale of the selected 3D model and the axis the model is oriented in.  Typical 3D modelling tools align the z-axis to be "UP", however Unity's coordinate system treats y-axis to be UP.  If possible, in a 3D modelling software program
 	- orient the model's o if the imported 3D model is rotated, then coordinates were different.  
 	- position the origin of the coordinate system to be located to the model's lower corner.  
-![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/ModellingCoordinates.png)
+![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/ModellingCoordinates.PNG)
 
 ## Configuring Project
 1. Download the HoloTouch Toolkit from this github repo 
@@ -89,7 +89,7 @@ The first step is to log into the [Vuforia License Manager](https://developer.vu
 
 ### Configure Project Settings
 1. Select  **File/ Build Settings /** and underneath Platform, if Universal Windows Platform is not selected, select it and click on Switch Platform to build for the HoloLens. 
-![Vuforia Build Settings](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/buildsettings2.png)
+![Vuforia Build Settings](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/buildsettings2.PNG)
 2. Click on Add Open Scene, which should include your current scene with a checked box when you are building your application to the HoloLens.
 3. Next click on Players Settings, next to the Switch Platform button
 4. The right side in the inspector panel of the Players Settings.  Click to drop down the XR Settings tab.  Check box the Virtual Reality Supported and Vuforia Augmented Reality options.
