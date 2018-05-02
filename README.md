@@ -129,30 +129,35 @@ With the Vuforia Configurations loaded with the image database set in your Vufor
 
 ### Import 3D Model
 Next import your 3D obj model into Unity.
-1. Go to **Assets/Import New Asset** and select the .obj file that was downloaded into **Assets/HoloTouch/Models ** folder
+1. Go to **Assets/Import New Asset** and select the .obj file that was downloaded into **Assets/HoloTouch/Models **  folder
 2. In the Project tab, navigate to **Assets/HoloTouch/Models** folder and select on the .obj model file.
-3. The Inspector tab will show the Import Settings, which includes  a field for Scale Factor
-4. **Drag the model in to the scene to check whether the import scaling is correct, by comparing it with the size of  images...  If the import is too small, then with then change the import setting's scale factor.  (Typically it can be off by .001, .01 depending on the file's measurement settings when it was saved)** 
- 5. After fixing the scaling of the model, another caveat is that typical 3D modelling tools treat the z-axis to be "UP", but Unity's coordinate system treats y-axis to be UP.  So if the imported 3D model is rotated, then coordinates were different.  To remedy this, drag the .obj file into the scene and reorient the rotation of the model changing the model's gameobject's transform rotations in the Inspector.  Once the gameobject is oriented properly, drag the model gameobject from the hierarchy into **Asset/HoloTouch/Models** folder to save it as a new prefab. Rename the new prefab as "model-reoriented"
-[VIDEO LINK OF REORIENTING AND NEW PREFAB]
-
-
+3. The Inspector tab will show the Import Settings, which includes a field for Scale Factor.  Unity's base units are in meters, so if the model was created in mm scaling, then scale down the model by .001.
+4. *Drag the model in to the scene to check whether the import scaling is correct, by comparing it with the size of  images...  If the import is too small, then with then change the import setting's scale factor. *
+5. As mentioned earlier, another caveat about Unity is that the Y-Axis is in the "UP" direction.  So if the imported 3D model is rotated, then coordinates were different.  Fix this by dragging the .obj file into the scene and reorient the rotation of the model changing the model's GameObject's transform rotations in the Inspector.  Once the GameObject's is oriented properly, drag the model GameObject's from the hierarchy into **Asset/HoloTouch/Models** folder to save it as a new Prefab. Rename the new prefab as "model-reoriented" and delete the model GameObject from the Hierarchy.
+![All Images Set](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/RotatingModel.png)
 
 
 ## Configuration HoloTouch Editor
 The next step is to orient and position the image targets and 3D model in the scene using the HoloToch Editor.
-1.  Navigate to **HoloTouch/Settings** in the toolbar, which will open the HoloTouch Editor window.  This window can be expanded larger or attached into the Unity Editor like any other window.
+1.  Navigate to **HoloTouch/Settings** in the toolbar, which will open the HoloTouch Editor window.  This window can be expanded larger or attached into the Unity Editor like any other window.![Holotouch Settings](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/holotouchsettings.png)
 2. From the **Assets/HoloTouch/Models** folder in the Project tab, drag the "model-reoriented" prefab into the HoloTouch Editor's 3D model field.  This sets the viewed model that will be displayed when Vuforia tracks the markers.
+![Set Model](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/setModel.gif)
 3. Next enter the 3D model's width and length (in meters) into the HoloTouch Editor.
-4. Under the Image Target Info header, if the Image Target 1,2,3,4 inputs show up as None (Game Object) , drag each imgTarget1 gameobject from the Hierarchy tab into each appropriate field.
-5. Next enter the image targets width and length (in meters) into the HoloTouch Editor.
-6. With all of the fields filled out in the HoloTouch Editor, press the Apply Settings button.  This should automatically orient the 3d model in center, with imgTarget1,2,3,4 placed in the appropriate corners.  If the scaling of the model, and the model and image target dimensions set correctly in the HoloTouch Editor, then the corners of the image targets should only touch the corner of the 3D model.
+4. Drag the Target-Placement-Manager GameObject from the hiearchy into the HoloTouch Editor's Target Manager field.
+![Set Target Manager](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/setTargetManager.gif)
+5. Under the Image Target Info header, if the Image Target 1,2,3,4 inputs show up as None (Game Object) , drag each imgTarget1 gameobject from the Hierarchy tab into each appropriate field.
+![Setting Image Targets](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/setImgTargets.gif)
+6. Next enter the image targets width and length (in meters) into the HoloTouch Editor.
+7. With all of the fields filled out in the HoloTouch Editor, press the Apply Settings button.  This should automatically orient the 3D model in center, with imgTarget1,2,3,4 placed in the appropriate corners.  If the scaling of the model and image target dimensions set correctly in the HoloTouch Editor, then the corners of the image targets should only touch the corner of the 3D model.  Click and inspect the Target-Placement-Manager GameObject to make sure that the TargetModelManager script is referencing the created 3D model in the scene.
+![Applying HoloTouchEditor settings ](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/applyHoloEditorSettings.gif)
 
 ### Building Project for Visual Studio
 Once the image targets and model are placed in the scene, its time to build the Unity project to the Hololens.
 1. Navigate to **File/Build Settings** and make sure that the current scene is checked, and Universal Windows Platform is already selected under Platform.
 2. Click Build, which will ask to save the build in a new folder.  Try saving this new folder outside of your Unity project folder.
 3. After Unity finishes saving the build, navigate to this folder and locate the Visual Studio Solution file (.sln) , which should be the same name as the one set in the Players Setting step.
+![Building Project](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/buildingProject.gif)
+
 
 ### Preparing the Hololens
 Instructions from https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio
@@ -165,14 +170,13 @@ Start by enabling  **Developer Mode**  on your device so Visual Studio can conne
 6.  Enable  **Developer Mode**. This will allow you to  [deploy apps from Visual Studio](https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio)  to your HoloLens.
 
 ### Deploying in Visual Studio 
-1. In the new folder that the Unity project was built and saved into, double click on the .sln file, which will open up Visual Studio 2017.
+1. In the folder that the Unity project was built and saved into, double click on the .sln file, which will open up Visual Studio 2017.
 2. Connect your HoloLens to your laptop/computer with a microUSB cable, and make sure the HoloLens is on.
-3. Select  **Release** and **x86**  build configuration for your app  ![x86 build configuration in Visual Studio](https://docs.microsoft.com/en-us/windows/mixed-reality/images/x86setting.png)
-4.  Select  **Device**  in the deployment target drop-down menu![Device deployment in Visual Studio](https://docs.microsoft.com/en-us/windows/mixed-reality/images/buildsettingsusbdeploy.png)
-5.  Select  green arrow icon next to **Device**  to deploy your app
-6.  The first time you deploy an app to your HoloLens from your PC, you will be prompted for a PIN. Follow the  **Pairing your device**  instructions in https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio.
-7.  Once Visual Studio finishes deploying the application, you can unplug your HoloLens from your laptop and find your application in your Applications folder.
-
+3. Select  **Release** and **x86**  build configuration for your app  
+6.  Select  **Device**  in the deployment target drop-down menu![Visual Studio Settings](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/VisualStudioSettings.PNG)
+7.  Select  green arrow icon next to **Device**  to deploy your app
+8.  The first time you deploy an app to your HoloLens from your PC, you will be prompted for a PIN. Follow the  **Pairing your device**  instructions in https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio.
+9.  Once Visual Studio finishes deploying the application, you can unplug your HoloLens from your laptop and find your application in your Applications folder.
 
 ## Physical 3D Model Print Preparation
 - Affix the 3D printed model in the center of a flat surface

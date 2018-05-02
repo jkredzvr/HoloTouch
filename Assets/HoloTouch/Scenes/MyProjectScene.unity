@@ -345,7 +345,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: '--- EMPTY ---Material'
+  m_Name: qr3-2x2Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -358,7 +358,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 3c3dcd82aaa44e03b1c42408f3d786a8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -370,7 +370,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: '--- EMPTY ---Material'
+  m_Name: qr1-2x2Material
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -383,7 +383,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 98ea73c3275948519e36df78b43d9ff3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -653,179 +653,179 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396731083775984, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4396731083775984, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4396731083775984, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4863542345094328, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4863542345094328, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4863542345094328, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 114444304190438842, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mTrackableName
-      value: '--- EMPTY ---'
+      value: qr1-2x2
       objectReference: {fileID: 0}
     - target: {fileID: 114444304190438842, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mDataSetPath
-      value: QCAR/--- EMPTY ---.xml
+      value: Vuforia/DataViz.xml
       objectReference: {fileID: 0}
     - target: {fileID: 114444304190438842, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mWidth
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 114444304190438842, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mHeight
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 114828440265049906, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mTrackableName
-      value: '--- EMPTY ---'
+      value: qr2-2x2
       objectReference: {fileID: 0}
     - target: {fileID: 114828440265049906, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mDataSetPath
-      value: QCAR/--- EMPTY ---.xml
+      value: Vuforia/DataViz.xml
       objectReference: {fileID: 0}
     - target: {fileID: 114828440265049906, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mWidth
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 114828440265049906, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mHeight
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4387097460759198, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4387097460759198, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4387097460759198, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4824791056160136, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4824791056160136, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4824791056160136, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114499296232915386, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mTrackableName
-      value: '--- EMPTY ---'
+      value: qr4-2x2
       objectReference: {fileID: 0}
     - target: {fileID: 114499296232915386, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mDataSetPath
-      value: QCAR/--- EMPTY ---.xml
+      value: Vuforia/DataViz.xml
       objectReference: {fileID: 0}
     - target: {fileID: 114499296232915386, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mWidth
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 114499296232915386, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mHeight
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4311782413040242, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4311782413040242, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4311782413040242, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4976755225804992, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4976755225804992, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4976755225804992, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4365097861502380, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4365097861502380, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4365097861502380, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 4169988430797988, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.x
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4169988430797988, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.y
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4169988430797988, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
       propertyPath: m_LocalScale.z
-      value: 0.0762
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114273112320082302, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mTrackableName
-      value: '--- EMPTY ---'
+      value: qr3-2x2
       objectReference: {fileID: 0}
     - target: {fileID: 114273112320082302, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mDataSetPath
-      value: QCAR/--- EMPTY ---.xml
+      value: Vuforia/DataViz.xml
       objectReference: {fileID: 0}
     - target: {fileID: 114273112320082302, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mWidth
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     - target: {fileID: 114273112320082302, guid: 1173b083c037dcf438def8a1e68c25ed,
         type: 2}
       propertyPath: mHeight
-      value: 1
+      value: 0.0508
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1173b083c037dcf438def8a1e68c25ed, type: 2}
