@@ -55,7 +55,7 @@ The first step is to log into the [Vuforia License Manager](https://developer.vu
 ![Vuforia Target Images2](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_2.png)
 
 4. Vuforia can recognize different types of targets ranging from 2D images, 3D objects, and shapes.  Further information and suggestions for improving image recognition and tracking stability can be found [here](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability).
-- Included in this [repository is a sample set of 4 fiduciary markers](https://github.com/jkredzvr/HoloTouch/tree/master/ImageTargets)  (each being 2"x2" and 3"x3" in size) that can be uploaded for image tracking.  
+- Included in this [repository is a sample set of 4 fiduciary markers](https://github.com/jkredzvr/HoloTouch/tree/master/Documentation/ImageTargets)  (each being 2"x2" and 3"x3" in size) that can be uploaded for image tracking.  
 
 5. When uploading the image target, the width must be entered meters.  Lastly give the image target a unique name that will be saved in the database, before clicking on the Add Button
 ![Vuforia Target Images 3](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/5_TargetManager_3.png)
@@ -81,7 +81,7 @@ The first step is to log into the [Vuforia License Manager](https://developer.vu
 ## Configuring Project
 1. Download the HoloTouch Toolkit from this github repo 
 2. Open the HoloTouch project with Unity 2017.2.1p2 editor
-3. In the Project folder tab, navigate to Assets/HoloTouch/Scenes/ folder and select on the Template.scene file.
+3. In the Project folder tab, navigate to **Assets/HoloTouch/Scenes/** folder and select on the Template.scene file.
 ![Vuforia Template Scene](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/TemplateSceneSelected.png)
 
 5. With the template scene selected, press Ctrl+D to make a copy of the scene and rename to what you desire.
@@ -103,10 +103,12 @@ The template scene will start with an AR Camera, Target-Placement-Manager, and B
 
 ![Vuforia Target Images 7](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/raw/master/Screenshots/5_TargetManager_7.png)
 3. After importing all the database image Unity package, navigate to **Windows/Vuforia Configuration** to show the Vuforia Configuration settings in the Inspector window.
+
 4.  In the Vuforia Configuration, paste your Vuforia App License key from your Vuforia  Account into the App License Key text input field.
 ![Vuforia Config App Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/VuforiaConfigAppKey.PNG)
-6.  Underneath the Digital Eyewear header, select **Optical See-Through** for Eyewear Type and **HoloLens** for See Through Config
-7. Underneath Databases header the name of your image database should show up.  (In my case I named my database DataViz)  Select the check boxes to load and activate your databases and enable tracking with Vuforia
+
+5.  Underneath the Digital Eyewear header, select **Optical See-Through** for Eyewear Type and **HoloLens** for See Through Config
+6. Underneath Databases header the name of your image database should show up.  (In my case I named my database DataViz)  Select the check boxes to load and activate your databases and enable tracking with Vuforia
 ![Vuforia Config App Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/VuforiaConfigDatabases.png)
 
 ### Setting up Target Images in Unity
@@ -117,7 +119,9 @@ With the Vuforia Configurations loaded with the image database set in your Vufor
 - imgTarget2 top right corner
 - imgTarget3 bottom left corner
 - imgTarget4 bottom right corner
+
 2. Select an imgTarget in the hierarchy tab
+
 ![Selected Image Target](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/SelectedImgTarget.PNG)
 3. In the inspector, the Image Target Behaviour component handles the image target settings
 4. In the Database drop down field (currently labelled as ---EMPTY--- select your image database for the project
@@ -144,12 +148,17 @@ The next step is to orient and position the image targets and 3D model in the sc
 2. From the **Assets/HoloTouch/Models** folder in the Project tab, drag the "model-reoriented" prefab into the HoloTouch Editor's 3D model field.  This sets the viewed model that will be displayed when Vuforia tracks the markers.
 
 ![Set Model](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/settingModel.gif)
+
 3. Next enter the 3D model's width and length (in meters) into the HoloTouch Editor.
+
 4. Drag the Target-Placement-Manager GameObject from the hiearchy into the HoloTouch Editor's Target Manager field.
 ![Set Target Manager](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/setTargetManager.gif)
+
 5. Under the Image Target Info header, if the Image Target 1,2,3,4 inputs show up as None (Game Object) , drag each imgTarget1 gameobject from the Hierarchy tab into each appropriate field.
 ![Setting Image Targets](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/setImageTargets.gif)
+
 6. Next enter the image targets width and length (in meters) into the HoloTouch Editor.
+
 7. With all of the fields filled out in the HoloTouch Editor, press the Apply Settings button.  This should automatically orient the 3D model in center, with imgTarget1,2,3,4 placed in the appropriate corners.  If the scaling of the model and image target dimensions set correctly in the HoloTouch Editor, then the corners of the image targets should only touch the corner of the 3D model.  Click and inspect the Target-Placement-Manager GameObject to make sure that the TargetModelManager script is referencing the created 3D model in the scene.
 ![Applying HoloTouchEditor settings ](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/applyHoloEditorSettings.gif)
 
