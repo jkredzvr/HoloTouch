@@ -101,14 +101,13 @@ The template scene will start with an AR Camera, Target-Placement-Manager, and B
 
 1.  Import the Vuforia Image Database file that was downloaded from Vuforia website by navigating to **Assets/Import Packages/Custom Packages** and open the downloaded Image Database Unity Package.
 
-![Vuforia Target Images 7](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/raw/master/Screenshots/5_TargetManager_7.png)](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/blob/master/Screenshots/5_TargetManager_7.png)
-
+![Vuforia Target Images 7](https://github.com/jkredzvr/Unity-Vuforia-Tutorial/raw/master/Screenshots/5_TargetManager_7.png)
 3. After importing all the database image Unity package, navigate to **Windows/Vuforia Configuration** to show the Vuforia Configuration settings in the Inspector window.
 4.  In the Vuforia Configuration, paste your Vuforia App License key from your Vuforia  Account into the App License Key text input field.
-![Vuforia Config App Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/VuforiaConfigAppKey.png)
+![Vuforia Config App Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/VuforiaConfigAppKey.PNG)
 6.  Underneath the Digital Eyewear header, select **Optical See-Through** for Eyewear Type and **HoloLens** for See Through Config
 7. Underneath Databases header the name of your image database should show up.  (In my case I named my database DataViz)  Select the check boxes to load and activate your databases and enable tracking with Vuforia
-![Vuforia Config App Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/VuforiaConfDatabases.png)
+![Vuforia Config App Key](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/VuforiaConfigDatabases.png)
 
 ### Setting up Target Images in Unity
 With the Vuforia Configurations loaded with the image database set in your Vuforia account, we'll set up a virtual scene for our objects to appear when an images are recognized.
@@ -119,34 +118,37 @@ With the Vuforia Configurations loaded with the image database set in your Vufor
 - imgTarget3 bottom left corner
 - imgTarget4 bottom right corner
 2. Select an imgTarget in the hierarchy tab
-![Selected Image Target](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/SelectedImgTarget.png)
+![Selected Image Target](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/SelectedImgTarget.PNG)
 3. In the inspector, the Image Target Behaviour component handles the image target settings
 4. In the Database drop down field (currently labelled as ---EMPTY--- select your image database for the project
 5. Next in the Image Target drop down field, select the appropriate image target file name associated to the image you will place in the corners of your actual 3D printed model. (In my case my database was named DataVis, and I will use the 2x2" img target)
+
 ![Selected Image Target](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/SettingImgTargets.gif)
+
 6. After selecting the Image Target, the imgTarget gameobject will be re-scaled in the Scene tab to the actual size in meters of your uploaded image targets.  Continue setting the image targets for the remaining imgTarget gameobjects.
 ![All Images Set](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/AllImagesSet.png)
 
 ### Import 3D Model
 Next import your 3D obj model into Unity.
-1. Go to **Assets/Import New Asset** and select the .obj file that was downloaded into **Assets/HoloTouch/Models **  folder
+1. Go to **Assets/Import New Asset** and select the .obj file that was downloaded into **Assets/HoloTouch/Models**  folder
 2. In the Project tab, navigate to **Assets/HoloTouch/Models** folder and select on the .obj model file.
 3. The Inspector tab will show the Import Settings, which includes a field for Scale Factor.  Unity's base units are in meters, so if the model was created in mm scaling, then scale down the model by .001.
-4. *Drag the model in to the scene to check whether the import scaling is correct, by comparing it with the size of  images...  If the import is too small, then with then change the import setting's scale factor. *
+4. Drag the model in to the scene to check whether the import scaling is correct.
 5. As mentioned earlier, another caveat about Unity is that the Y-Axis is in the "UP" direction.  So if the imported 3D model is rotated, then coordinates were different.  Fix this by dragging the .obj file into the scene and reorient the rotation of the model changing the model's GameObject's transform rotations in the Inspector.  Once the GameObject's is oriented properly, drag the model GameObject's from the hierarchy into **Asset/HoloTouch/Models** folder to save it as a new Prefab. Rename the new prefab as "model-reoriented" and delete the model GameObject from the Hierarchy.
-![All Images Set](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/RotatingModel.png)
+![All Images Set](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/RotatingModel.gif)
 
 
 ## Configuration HoloTouch Editor
 The next step is to orient and position the image targets and 3D model in the scene using the HoloToch Editor.
 1.  Navigate to **HoloTouch/Settings** in the toolbar, which will open the HoloTouch Editor window.  This window can be expanded larger or attached into the Unity Editor like any other window.![Holotouch Settings](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/holotouchsettings.png)
 2. From the **Assets/HoloTouch/Models** folder in the Project tab, drag the "model-reoriented" prefab into the HoloTouch Editor's 3D model field.  This sets the viewed model that will be displayed when Vuforia tracks the markers.
-![Set Model](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/setModel.gif)
+
+![Set Model](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/settingModel.gif)
 3. Next enter the 3D model's width and length (in meters) into the HoloTouch Editor.
 4. Drag the Target-Placement-Manager GameObject from the hiearchy into the HoloTouch Editor's Target Manager field.
 ![Set Target Manager](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/setTargetManager.gif)
 5. Under the Image Target Info header, if the Image Target 1,2,3,4 inputs show up as None (Game Object) , drag each imgTarget1 gameobject from the Hierarchy tab into each appropriate field.
-![Setting Image Targets](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/setImgTargets.gif)
+![Setting Image Targets](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/setImageTargets.gif)
 6. Next enter the image targets width and length (in meters) into the HoloTouch Editor.
 7. With all of the fields filled out in the HoloTouch Editor, press the Apply Settings button.  This should automatically orient the 3D model in center, with imgTarget1,2,3,4 placed in the appropriate corners.  If the scaling of the model and image target dimensions set correctly in the HoloTouch Editor, then the corners of the image targets should only touch the corner of the 3D model.  Click and inspect the Target-Placement-Manager GameObject to make sure that the TargetModelManager script is referencing the created 3D model in the scene.
 ![Applying HoloTouchEditor settings ](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/applyHoloEditorSettings.gif)
@@ -161,6 +163,7 @@ Once the image targets and model are placed in the scene, its time to build the 
 
 ### Preparing the Hololens
 Instructions from https://docs.microsoft.com/en-us/windows/mixed-reality/using-visual-studio
+
 Start by enabling  **Developer Mode**  on your device so Visual Studio can connect to it.
 1.  Turn on your HoloLens and put on the device.
 2.  Perform the  [bloom](https://docs.microsoft.com/en-us/windows/mixed-reality/gestures#bloom)  gesture to launch the main menu.
