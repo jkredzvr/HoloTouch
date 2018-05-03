@@ -16,7 +16,7 @@
 	* [Configuring Vuforia Target Database](#configuring-vuforia-target-database)
 	* [Setting up Target Images in Unity](#setting-up-target-images-in-unity)
 	* [Import 3D Model](#import-3D-model)
-	* [Configuration HoloTouch Editor](#configuration-holoTouch-editor)
+	* [Configuration HoloTouch Editor](#configuration-holotouch-editor)
 
 * [Preparing the Hololens](#preparing-the-hololens)
 * [Deploying in Visual Studio](#deploying-in-visual-studio)
