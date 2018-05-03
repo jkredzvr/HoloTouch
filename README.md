@@ -9,7 +9,7 @@
 * [Account Registration](#account-registration)
 * [Vuforia Setup](#vuforia-setup)
 	* [Vuforia License Key](#vuforia-license-key)
-	* [Vuforia Image Target Database](#vuforia-image-target-database)
+	* [Vuforia Target Image Database](#vuforia-target-image-database)
 * [3D Model Preparation](#3D-model-preparation)
 * [Configuring Project](#configuring-project)
 	* [Configure Project Settings](#configure-project-settings)
