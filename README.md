@@ -2,7 +2,7 @@
 # HoloTouch
 
 [![3x3Testing](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/holotouch3x3test.png)](https://youtu.be/_Idcon8Eytc)
-[![2x2Testing](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/holotouch2x2test.gif)](https://youtu.be/RUGDe2U5uuk)
+[![2x2Testing](https://github.com/jkredzvr/HoloTouch/blob/master/Documentation/Images/holoTouch2x2test.gif)](https://youtu.be/RUGDe2U5uuk)
    
 **HoloTouch**  Unity package/project creates custom augmented visualizations over 3D printed models using Vuforia and Microsoft HoloLens.
 
