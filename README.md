@@ -24,6 +24,7 @@
 * [Deploying in Visual Studio](#deploying-in-visual-studio)
 * [Physical 3D Model Print Preparation](#physical-3D-model-print-preparation)
 * [Extra Functionalities](#extra-functionalities)
+* [Suggested Improvements](#suggested-improvements)
 * [License](#license)
 
 ## Features
@@ -220,6 +221,12 @@ Start by enabling  **Developer Mode**  on your device so Visual Studio can conne
 
 ## Extra Functionalities
 - In the Target-Tracking-Manager script there is a boolean field for Debug Mode.  Check this true if you want an additional visual cue to indicate which and when the image targets are recognized by the Hololens.  When this is set True and deployed on the Hololens, a capsule will appear above each of the image targets are recognized.  When the HoloLens loses tracking on an image target, the capsule will disappear.
+
+## Suggested Improvements
+1.  The recorded HoloLens video of the project shows that the augmented model is offset from the actual 3D model, but in the headset they do overlap.  Tracking performance is much better when deployed on a cell phone compared to the HoloLens
+2.  Add voice control to toggle Debug Mode outside of the editor mode
+3.  Additional information embedded into augmented overlay.
+
 
 ## License
 Copyright <2018>
